@@ -158,6 +158,13 @@ streamlit run app/ui/streamlit_app.py
 # Streamlit UI:    http://localhost:8501
 ```
 
+Using Docker
+docker compose up --build
+# UI: http://localhost:8501
+# API: http://localhost:8000/docs
+
+
+
 ### 🔧 API Endpoints
 
 | Method | Endpoint           | Description                       |
@@ -271,15 +278,7 @@ Model Requirements:
 | 🎯 SDG 15  | Life on Land   | Promoting sustainability    |
 | 🎯 SDG 9   | Innovation     | AI for social good          |
 
----
 
-## 👥 Team Role Mapping
-
-| Group      | Responsibility             | Files                        |
-|------------|----------------------------|------------------------------|
-| Group 1    | ML Model Integration       | model_artifacts/, model.py   |
-| Group 2    | Database & API             | schema.sql, database.py, main.py |
-| Group 3    | UI & Optimization          | streamlit_app.py, Docker configs |
 
 ---
 
@@ -292,31 +291,62 @@ Import `postman_collection.json` to test:
 
 ---
 
-## 🤝 Contributors
+👨‍💻 Author & My Contributions
+Tanisha Sharma (DevTanisha-max)
 
-| GitHub                   | Role                         |
-|--------------------------|------------------------------|
-| [@Raaunnakk555](https://github.com/Raaunnakk555)           | Project Lead / ML Engineer     |
-| [@DevTanisha-max](https://github.com/DevTanisha-max)       | Contributor                   |
-| [@riya23605shukla-arch](https://github.com/riya23605shukla-arch) | Contributor                   |
+GitHub: @DevTanisha-max
 
----
+What I Built:
+🔧 Backend Engineering
 
-## 📄 License
+FastAPI REST API with prediction endpoints
 
+SQLite database integration for disease rules
+
+Pydantic schemas for request/response validation
+
+API error handling and logging
+
+🎨 Frontend Development
+
+Streamlit UI for leaf image upload
+
+Real-time prediction display
+
+Treatment recommendations UI
+
+Responsive interface design
+
+🐳 DevOps & Containerization
+
+Dockerfile for API service
+
+Dockerfile for UI service
+
+Docker Compose for multi-service orchestration
+
+Render.com deployment ready
+
+📝 Testing & Documentation
+
+Pytest unit tests for API validation
+
+Postman collection for API testing
+
+Comprehensive README documentation
+
+Skills Demonstrated:
+Python FastAPI Streamlit Docker Postman Pytest Git SQLite REST APIs UI Development
+
+🙏 Acknowledgments
+ML Model: The CNN model architecture was developed by @Raaunnakk555
+
+Dataset: PlantVillage dataset (for reference)
+
+Frameworks: FastAPI, Streamlit, TensorFlow/Keras
+
+📄 License
 MIT License
 
----
-
-## 🙏 Acknowledgments
-
-- PlantVillage Dataset (for training)
-- FastAPI & Streamlit communities
-- TensorFlow/Keras for deep learning framework
-
----
-
-## ⭐ Show Your Support
-
-Good luck for your pre-review! ✨  
+⭐ Show Your Support
 If this project helps you, please give it a ⭐ on GitHub!
