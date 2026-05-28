@@ -299,7 +299,7 @@ Import `postman_collection.json` to test:
 
 ## 👨‍💻 Author & My Contributions
 
-**Tanisha Sharma (@DevTanisha-max)**
+**[Tanisha Sharma](https://github.com/DevTanisha-max)** |
 
 **What I Built:**
 
