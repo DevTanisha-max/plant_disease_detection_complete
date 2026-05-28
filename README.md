@@ -14,7 +14,7 @@ A **production-ready, demo-ready** plant disease detection system that uses **AI
 
 ## 📂 GitHub Repository
 
-🔗 [View Source Code](https://github.com/DevTanisha-max/plantdiseasedemo)
+🔗 [View Source Code](https://github.com/DevTanisha-max/plant_disease_detection_complete)
 
 ---
 
