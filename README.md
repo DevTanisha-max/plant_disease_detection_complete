@@ -1,694 +1,322 @@
-<<<<<<< HEAD
-\# 🌿 Plant Disease Detection System - Pre-Review Prototype
+# 🌿 Plant Disease Detection System - Pre-Review Prototype
 
+A **production-ready, demo-ready** plant disease detection system that uses **AI (CNN/TensorFlow)** to identify plant diseases from leaf images and provides treatment recommendations.
 
+> ⚠️ **Pre-Review Note:**  
+> Currently uses a **stub predictor** for demo purposes. After review, simply plug in your trained TensorFlow/TFLite model.
 
-A \*\*production-ready, demo-ready\*\* plant disease detection system that uses \*\*AI (CNN/TensorFlow)\*\* to identify plant diseases from leaf images and provides treatment recommendations.
+---
 
+## 🌐 Live Demo
 
+🔗 **[Click here to view the live application](https://plantdiseasedemo.onrender.com)**  
+*(Coming soon after deployment)*
 
-> ⚠️ \*\*Pre-Review Note:\*\* Currently uses a \*\*stub predictor\*\* for demo purposes. After review, simply plug in your trained TensorFlow/TFLite model.
+## 📂 GitHub Repository
 
+🔗 [View Source Code](https://github.com/DevTanisha-max/plantdiseasedemo)
 
+---
 
-\---
-
-
-
-
-\## 🌐 Live Demo
-
-🔗 \*\*\[Click here to view the live application](https://plantdiseasedemo.onrender.com)\*\* \*(Coming soon after deployment)\*
-
-
-
-\## 📂 GitHub Repository
-
-🔗 \[View Source Code](https://github.com/DevTanisha-max/plantdiseasedemo)
-
-
-
-\---
-
-
-
-
-\## 📌 Project Overview
-
-
+## 📌 Project Overview
 
 This system helps farmers and agriculturists quickly identify plant diseases by uploading a leaf image. The AI model analyzes the image and provides:
 
-
-
-| Feature | Description |
-
-|---------|-------------|
-
-| 🔍 \*\*Disease Detection\*\* | CNN-based classification |
-
-| 📊 \*\*Confidence Score\*\* | Prediction accuracy percentage |
-
-| 💊 \*\*Treatment Plan\*\* | Organic \& chemical remedies |
-
-| 🗄️ \*\*Disease Database\*\* | SQLite/PostgreSQL storage |
-
-| 🐳 \*\*Docker Support\*\* | Easy containerized deployment |
-
-
-
-\---
-
-
-
-
-
-\## 🎯 Key Features
-
-
-
-| Feature | Status | Description |
-
-|---------|--------|-------------|
-
-| ✅ \*\*Image Upload\*\* | Working | Upload leaf images via Streamlit UI |
-
-| ✅ \*\*API Backend\*\* | Working | FastAPI with REST endpoints |
-
-| ✅ \*\*Stub Predictor\*\* | Working | Placeholder for your trained model |
-
-| ✅ \*\*Rule Engine\*\* | Working | Disease-specific remedies |
-
-| ✅ \*\*Database\*\* | Working | SQLite with seed data |
-
-| ✅ \*\*Docker Compose\*\* | Working | Run UI + API together |
-
-| ✅ \*\*Unit Tests\*\* | Working | Pytest for API validation |
-
-| 🔜 \*\*Trained Model\*\* | Pending | Plug in after pre-review |
-
-
-
-\---
-
-
-
-
-
-
-\## 🧠 System Architecture
-
-┌─────────────────────────────────────────────────────────────┐
-
-│ User Uploads Image │
-
-└─────────────────────────┬───────────────────────────────────┘
-
-↓
-
-┌─────────────────────────────────────────────────────────────┐
-
-│ Streamlit UI (Port 8501) │
-
-│ app/ui/streamlit\_app.py │
-
-└─────────────────────────┬───────────────────────────────────┘
-
-↓ (HTTP POST)
-
-┌─────────────────────────────────────────────────────────────┐
-
-│ FastAPI Backend (Port 8000) │
-
-│ app/backend/main.py │
-
-└─────────────────────────┬───────────────────────────────────┘
-
-↓
-
-┌─────────────────────────────────────────────────────────────┐
-
-│ Model Predictor (model.py) │
-
-│ ┌─────────────────────────────────┐ │
-
-│ │ Stub Predictor (Current) │ │
-
-│ │ ↓ After Review ↓ │ │
-
-│ │ Trained CNN/TensorFlow/TFLite │ │
-
-│ └─────────────────────────────────┘ │
-
-└─────────────────────────┬───────────────────────────────────┘
-
-↓
-
-┌─────────────────────────────────────────────────────────────┐
-
-│ Rule Engine (rules.py) + Database │
-
-│ Returns: Disease + Remedies + Prevention │
-
-└─────────────────────────────────────────────────────────────┘
-
-
-
-
-
-\---
-
-
-
-\## 🛠️ Tech Stack
-
-
-
-| Category | Technology |
-
-|----------|------------|
-
-| \*\*Backend API\*\* | FastAPI (Python) |
-
-| \*\*Frontend UI\*\* | Streamlit |
-
-| \*\*Deep Learning\*\* | TensorFlow, Keras, TFLite (ready for plug-in) |
-
-| \*\*Database\*\* | SQLite (local) / PostgreSQL (production) |
-
-| \*\*Containerization\*\* | Docker, Docker Compose |
-
-| \*\*Testing\*\* | Pytest |
-
-| \*\*Deployment\*\* | Render.com |
-
-| \*\*Version Control\*\* | Git \& GitHub |
-
-
-
-
-
-\---
-
-
-
-\## 📁 Project Structure
-
+| Feature            | Description                   |
+|--------------------|------------------------------|
+| 🔍 **Disease Detection** | CNN-based classification      |
+| 📊 **Confidence Score**  | Prediction accuracy percentage |
+| 💊 **Treatment Plan**    | Organic & chemical remedies   |
+| 🗄️ **Disease Database**  | SQLite/PostgreSQL storage     |
+| 🐳 **Docker Support**    | Easy containerized deployment |
+
+---
+
+## 🎯 Key Features
+
+| Feature                | Status   | Description                             |
+|------------------------|----------|-----------------------------------------|
+| ✅ **Image Upload**     | Working  | Upload leaf images via Streamlit UI     |
+| ✅ **API Backend**      | Working  | FastAPI with REST endpoints             |
+| ✅ **Stub Predictor**   | Working  | Placeholder for your trained model      |
+| ✅ **Rule Engine**      | Working  | Disease-specific remedies               |
+| ✅ **Database**         | Working  | SQLite with seed data                   |
+| ✅ **Docker Compose**   | Working  | Run UI + API together                   |
+| ✅ **Unit Tests**       | Working  | Pytest for API validation               |
+| 🔜 **Trained Model**    | Pending  | Plug in after pre-review                |
+
+---
+
+## 🧠 System Architecture
+
+```
+User Uploads Image
+        │
+        ▼
+Streamlit UI (Port 8501)
+    app/ui/streamlit_app.py
+        │ (HTTP POST)
+        ▼
+FastAPI Backend (Port 8000)
+    app/backend/main.py
+        │
+        ▼
+Model Predictor (model.py)
+    ┌─────────────┬─────────────┐
+    │ Stub Model  │ <--- Now    │
+    │ Trained CNN │ <--- After  │
+    └─────────────┴─────────────┘
+        │
+        ▼
+Rule Engine (rules.py) + Database
+Returns: Disease + Remedies + Prevention
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Category            | Technology                             |
+|---------------------|----------------------------------------|
+| **Backend API**     | FastAPI (Python)                       |
+| **Frontend UI**     | Streamlit                              |
+| **Deep Learning**   | TensorFlow, Keras, TFLite (plug & play)|
+| **Database**        | SQLite (local) / PostgreSQL (prod)     |
+| **Containerization**| Docker, Docker Compose                 |
+| **Testing**         | Pytest                                 |
+| **Deployment**      | Render.com                             |
+| **Version Control** | Git & GitHub                           |
+
+---
+
+## 📁 Project Structure
+
+```
 plantdiseasedemo/
-
 ├── app/
-
-│ ├── backend/
-
-│ │ ├── main.py # FastAPI endpoints
-
-│ │ ├── model.py # Stub predictor + TF/TFLite plug-points
-
-│ │ ├── database.py # SQLite setup \& seed data
-
-│ │ ├── schemas.py # Pydantic models
-
-│ │ └── model\_artifacts/ # 👈 Place your trained model here
-
-│ ├── recommendation/
-
-│ │ └── rules.py # Rule-based disease remedies
-
-│ ├── ui/
-
-│ │ └── streamlit\_app.py # Streamlit UI
-
-│ └── db/
-
-│ ├── schema.sql # Database schema
-
-│ └── diseases.db # Auto-created SQLite DB
-
+│   ├── backend/
+│   │   ├── main.py                # FastAPI endpoints
+│   │   ├── model.py               # Stub predictor + TF/TFLite plug-points
+│   │   ├── database.py            # SQLite setup & seed data
+│   │   ├── schemas.py             # Pydantic models
+│   │   └── model_artifacts/       # 👈 Place your trained model here
+│   ├── recommendation/
+│   │   └── rules.py               # Rule-based disease remedies
+│   ├── ui/
+│   │   └── streamlit_app.py       # Streamlit UI
+│   └── db/
+│       ├── schema.sql             # Database schema
+│       └── diseases.db            # Auto-created SQLite DB
 ├── docker/
-
-│ ├── Dockerfile.api # FastAPI container
-
-│ ├── Dockerfile.ui # Streamlit container
-
-│ └── docker-compose.yml # Multi-container setup
-
+│   ├── Dockerfile.api             # FastAPI container
+│   ├── Dockerfile.ui              # Streamlit container
+│   └── docker-compose.yml         # Multi-container setup
 ├── tests/
+│   └── test_api.py                # Pytest unit tests
+├── requirements.txt               # Python dependencies
+├── postman_collection.json        # API testing collection
+└── Demo_cnn.ipynb                 # Model training notebook (optional)
+```
 
-│ └── test\_api.py # Pytest unit tests
+---
 
-├── requirements.txt # Python dependencies
+## 🚀 Quick Start Guide (Local Setup)
 
-├── postman\_collection.json # API testing collection
+### Prerequisites
 
-└── Demo\_cnn.ipynb # Model training notebook (optional)
+- Python 3.8+
+- pip (Python package manager)
+- (Optional) Docker Desktop
 
-
-
-
-\---
-
-
-
-\## 🚀 Quick Start Guide (Local Setup)
-
-
-
-\### Prerequisites
-
-
+### Step-by-Step Local Installation
 
 ```bash
-
-\# Required:
-
-\- Python 3.8+
-
-\- pip package manager
-
-
-
-\# Optional (for Docker):
-
-\- Docker Desktop
-
-
-
-Step-by-Step Local Installation
-
-\# 1. Clone the repository
-
+# 1. Clone the repository
 git clone https://github.com/DevTanisha-max/plantdiseasedemo.git
-
 cd plantdiseasedemo
 
-
-
-\# 2. Create virtual environment
-
+# 2. Create virtual environment
 python -m venv venv
 
-
-
-\# 3. Activate virtual environment
-
-\# Windows:
-
-venv\\Scripts\\activate
-
-\# Mac/Linux:
-
+# 3. Activate virtual environment
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
 source venv/bin/activate
 
-
-
-\# 4. Install dependencies
-
+# 4. Install dependencies
 pip install -r requirements.txt
 
-
-
-\# 5. Start the FastAPI backend (Terminal 1)
-
+# 5. Start the FastAPI backend (Terminal 1)
 uvicorn app.backend.main:app --reload --port 8000
 
+# 6. Start the Streamlit UI (Terminal 2)
+streamlit run app/ui/streamlit_app.py
 
+# 7. Open in browser
+# FastAPI API docs: http://localhost:8000/docs
+# Streamlit UI:    http://localhost:8501
+```
 
-\# 6. Start the Streamlit UI (Terminal 2)
+### 🔧 API Endpoints
 
-streamlit run app/ui/streamlit\_app.py
+| Method | Endpoint           | Description                       |
+|--------|--------------------|-----------------------------------|
+| POST   | /predict           | Upload image for prediction       |
+| GET    | /disease/{name}    | Get disease details + remedies    |
+| GET    | /health            | API health status                 |
 
+#### Example API Request
 
+```bash
+curl -X POST http://localhost:8000/predict \
+  -F "image=@leaf.jpg"
+```
 
-\# 7. Open in browser
-
-\# FastAPI API docs: http://localhost:8000/docs
-
-\# Streamlit UI: http://localhost:8501
-
-
-
-
-🔧 API Endpoints
-
-Method	Endpoint	Description
-
-POST	/predict	Upload image for disease prediction
-
-GET	/disease/{name}	Get disease details + remedies
-
-GET	/health	Check API health status
-
-
-Example API Request
-
-curl -X POST http://localhost:8000/predict \\
-
-&#x20; -F "image=@leaf.jpg"
-
-
-Example Response (Current - Stub)
+#### Example Response (Current - Stub)
+```json
 {
-
-&#x20; "disease": "Late Blight",
-
-&#x20; "confidence": 94.5,
-
-&#x20; "treatment": "Apply copper-based fungicide",
-
-&#x20; "prevention": "Crop rotation, resistant varieties",
-
-&#x20; "remedies": {
-
-&#x20;   "organic": "Neem oil spray",
-
-&#x20;   "chemical": "Mancozeb 75% WP"
-
-&#x20; }
-
+  "disease": "Late Blight",
+  "confidence": 94.5,
+  "treatment": "Apply copper-based fungicide",
+  "prevention": "Crop rotation, resistant varieties",
+  "remedies": {
+    "organic": "Neem oil spray",
+    "chemical": "Mancozeb 75% WP"
+  }
 }
+```
 
+#### 🧪 Testing
+Run unit tests:
+```bash
+pytest tests/test_api.py -v
+```
 
-🧪 Testing
-# Run unit tests
+Expected output:
+```
+tests/test_api.py::test_health_check PASSED
+tests/test_api.py::test_predict_endpoint PASSED
+tests/test_api.py::test_get_disease PASSED
+```
 
-pytest tests/test\_api.py -v
+---
 
-
-
-\# Expected output:
-
-\# tests/test\_api.py::test\_health\_check PASSED
-
-\# tests/test\_api.py::test\_predict\_endpoint PASSED
-
-\# tests/test\_api.py::test\_get\_disease PASSED
-
-
-🤖 Replacing the Stub with Your Trained Model
+## 🤖 Replacing the Stub with Your Trained Model
 
 After pre-review, plug in your model:
 
-1.Train your CNN (MobileNetV2 fine-tuned recommended)
+1. Train your CNN (MobileNetV2 fine-tuned recommended)
+2. Export your model as one of:
+    - TensorFlow SavedModel directory
+    - `.h5` Keras model
+    - TensorFlow Lite `.tflite`
+3. Place model in:
+    ```
+    app/backend/model_artifacts/your_model/
+    ```
+4. Set environment variables:
+    - `MODEL_KIND=keras|savedmodel|tflite`
+    - `MODEL_PATH=app/backend/model_artifacts/your_model`
+5. Update model.py with your preprocessing logic (expects RGB 224×224)
 
-
-
-2.Export your model as one of:
-
-
-
-&#x20; TensorFlow SavedModel directory
-
-
-
-&#x20; .h5 Keras model
-
-
-
-&#x20; TensorFlow Lite .tflite
-
-
-
-3.Place model in:
-app/backend/model\_artifacts/your\_model/
-
-4.Set environment variables:
-MODEL\_KIND=keras|savedmodel|tflite
-
-MODEL\_PATH=app/backend/model\_artifacts/your\_model
-
-5.Update model.py with your preprocessing logic (expects RGB 224×224)
 Model Requirements:
 
-Parameter	Value
+| Parameter         | Value                         |
+|-------------------|------------------------------|
+| Input Shape       | 224 × 224 × 3 (RGB)          |
+| Output            | Softmax over disease classes  |
+| Supported Formats | SavedModel, .h5, .tflite      |
 
-Input Shape	224 × 224 × 3 (RGB)
+---
 
-Output	Softmax over disease classes
+## 🐳 Deployment on Render
 
-Supported Formats	SavedModel, .h5, .tflite
+**Option 1: Deploy FastAPI Backend Only**
 
+1. Push code to GitHub
+2. On Render.com → New Web Service
+3. Connect repository
+4. Build Command:  
+   `pip install -r requirements.txt`
+5. Start Command:  
+   `uvicorn app.backend.main:app --host 0.0.0.0 --port 10000`
 
-🐳 Deployment on Render
+**Option 2: Deploy Streamlit UI Only**
 
-Option 1: Deploy FastAPI Backend Only
+1. On Render → New Web Service
+2. Build Command:  
+   `pip install -r requirements.txt`
+3. Start Command:  
+   `streamlit run app/ui/streamlit_app.py --server.port 10000`
 
-Push code to GitHub
+---
 
+## 📊 Project Impact
 
+### Agricultural Impact:
 
-On Render.com → New Web Service
+| Metric               | Target         |
+|----------------------|---------------|
+| Detection Accuracy   | 94%+ (trained)|
+| Time to Diagnosis    | < 5 seconds   |
+| Farmers Reachable    | 10,000+       |
+| Crop Loss Reduction  | 20-30%        |
 
+### UN SDGs Addressed
 
+| SDG        | Goal           | How                         |
+|------------|----------------|-----------------------------|
+| 🎯 SDG 2   | Zero Hunger    | Reducing crop losses        |
+| 🎯 SDG 15  | Life on Land   | Promoting sustainability    |
+| 🎯 SDG 9   | Innovation     | AI for social good          |
 
-Connect repository
+---
 
+## 👥 Team Role Mapping
 
+| Group      | Responsibility             | Files                        |
+|------------|----------------------------|------------------------------|
+| Group 1    | ML Model Integration       | model_artifacts/, model.py   |
+| Group 2    | Database & API             | schema.sql, database.py, main.py |
+| Group 3    | UI & Optimization          | streamlit_app.py, Docker configs |
 
-Build Command: pip install -r requirements.txt
+---
 
+## 📋 Postman Testing
 
+Import `postman_collection.json` to test:
 
-Start Command: uvicorn app.backend.main:app --host 0.0.0.0 --port 10000
+- POST `/predict` (multipart image upload)
+- GET `/disease/{name}`
 
+---
 
+## 🤝 Contributors
 
-Option 2: Deploy Streamlit UI Only
+| GitHub                   | Role                         |
+|--------------------------|------------------------------|
+| [@Raaunnakk555](https://github.com/Raaunnakk555)           | Project Lead / ML Engineer     |
+| [@DevTanisha-max](https://github.com/DevTanisha-max)       | Contributor                   |
+| [@riya23605shukla-arch](https://github.com/riya23605shukla-arch) | Contributor                   |
 
-On Render → New Web Service
+---
 
-
-
-Build Command: pip install -r requirements.txt
-
-
-
-Start Command: streamlit run app/ui/streamlit\_app.py --server.port 10000
-
-
-📊 Project Impact
-
-
-
-Agricultural Impact:
-
-
-
-Metric	Target
-
-Detection Accuracy	94%+ (with trained model)
-
-Time to Diagnosis	< 5 seconds
-
-Farmers Reachable	10,000+
-
-Crop Loss Reduction	20-30%
-
-
-
-
-
-UN SDGs Addressed:
-
-
-
-SDG	Goal	How
-
-🎯 SDG 2	Zero Hunger	Reducing crop losses
-
-🎯 SDG 15	Life on Land	Promoting sustainable agriculture
-
-🎯 SDG 9	Innovation	AI for social good
-
-
-
-
-
-
-
-👥 Team Role Mapping
-
-
-
-Group	Responsibility	Files
-
-Group 1	ML Model Integration	model\_artifacts/, model.py
-
-Group 2	Database \& API	schema.sql, database.py, main.py
-
-Group 3	UI \& Optimization	streamlit\_app.py, Docker configs
-
-
-
-
-
-📋 Postman Testing
-
-Import postman\_collection.json to test:
-
-
-
-POST /predict (multipart image upload)
-
-
-
-GET /disease/{name}
-
-
-
-
-
-
-
-🤝 Contributors
-
-GitHub	Role
-
-@Raaunnakk555	Project Lead / ML Engineer
-
-@DevTanisha-max	Contributor
-
-@riya23605shukla-arch	Contributor
-
-📄 License
+## 📄 License
 
 MIT License
 
+---
 
+## 🙏 Acknowledgments
 
+- PlantVillage Dataset (for training)
+- FastAPI & Streamlit communities
+- TensorFlow/Keras for deep learning framework
 
+---
 
+## ⭐ Show Your Support
 
-
-🙏 Acknowledgments
-
-PlantVillage Dataset for training (to be used)
-
-
-
-FastAPI \& Streamlit communities
-
-
-
-TensorFlow/Keras for deep learning framework
-
-
-
-
-
-
-
-⭐ Show Your Support
-
-Good luck for your pre-review! ✨
-
-
-
+Good luck for your pre-review! ✨  
 If this project helps you, please give it a ⭐ on GitHub!
-
-=======
-# Plant Disease Detection — Pre‑Review Prototype
-
-This is a **demo-ready scaffold** you can show in pre-review. It runs end-to-end:
-- Upload a leaf image in **Streamlit UI**
-- Sends it to a **FastAPI** backend
-- Backend uses a **stub predictor** (replace later with your trained CNN/TFLite)
-- Returns a **disease label** + **rule-based remedies**
-- Optional **SQLite** DB for disease metadata
-- **Pytest** unit test for the API
-- **Docker** & **docker-compose** to run both UI and API
-
-> ⚠️ For pre-review: this uses a lightweight **stub model** (no training needed).  
-> After review, plug in your trained **TensorFlow/TFLite** model by following the notes in `app/backend/model.py`.
-
----
-
-## Quick Start (Local)
-
-### 1) Create & activate env
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-### 2) Start the API
-```bash
-uvicorn app.backend.main:app --reload --port 8000
-```
-It will auto-create a SQLite database at `app/db/diseases.db` and seed basic data.
-
-### 3) Start the UI (in another terminal)
-```bash
-streamlit run app/ui/streamlit_app.py
-```
-The UI defaults to talking to `http://localhost:8000`.
-
----
-
-## Docker (Optional)
-
-```bash
-docker compose up --build
-```
-- Backend: http://localhost:8000/docs
-- UI: http://localhost:8501
-
----
-
-## Project Structure
-
-```
-app/
-  backend/
-    main.py            # FastAPI endpoints
-    model.py           # Stub predictor + plug points for TF/TFLite
-    database.py        # SQLite setup + seed
-    schemas.py         # Pydantic models
-  recommendation/
-    rules.py           # Rule-based remedies
-  ui/
-    streamlit_app.py   # Streamlit UI
-  db/
-    schema.sql
-docker/
-  Dockerfile.api
-  Dockerfile.ui
-  docker-compose.yml
-tests/
-  test_api.py
-requirements.txt
-```
-
----
-
-## Replacing the Stub with Your Trained Model
-
-1. Train your CNN (e.g., MobileNetV2 fine-tuned) and export **one** of:
-   - TensorFlow SavedModel directory, or
-   - `.h5` Keras model, or
-   - **TensorFlow Lite** `.tflite`
-
-2. Put the file/folder under `app/backend/model_artifacts/` and set the env vars:
-   - `MODEL_KIND=keras|savedmodel|tflite`
-   - `MODEL_PATH=app/backend/model_artifacts/your_model.xxx`
-
-3. The preprocessor expects **RGB 224×224**. Adjust in `model.py` if your model differs.
-
----
-
-## Postman
-
-Import `postman_collection.json` to test:
-- `POST /predict` (multipart image)
-- `GET /disease/{name}`
-
----
-
-## Team Role Mapping (from your doc)
-
-- **Group 1**: Fill `model_artifacts/` + update `model.py` predict()
-- **Group 2**: Extend DB fields in `schema.sql`, expand FastAPI endpoints
-- **Group 3**: Improve UI, add multilingual support, optimize Docker
-
-Good luck for your pre‑review! ✨
->>>>>>> 879d670a05dbe84f914281eeebf7ad8b9f5fa43a
