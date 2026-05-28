@@ -20,12 +20,13 @@ A **production-ready, demo-ready** plant disease detection system that uses **AI
 
 ## 📌 Project Overview
 
-This system helps farmers and agriculturists quickly identify plant diseases by uploading a leaf image. The AI model analyzes the image and provides:
+This system helps farmers and agriculturists quickly identify plant diseases by uploading a leaf image.
+The AI model analyzes the image and provides:
 
-| Feature            | Description                   |
-|--------------------|------------------------------|
+| Feature                 | Description                   |
+|-------------------------|------------------------------|
 | 🔍 **Disease Detection** | CNN-based classification      |
-| 📊 **Confidence Score**  | Prediction accuracy percentage |
+| 📊 **Confidence Score**  | Prediction accuracy (%)       |
 | 💊 **Treatment Plan**    | Organic & chemical remedies   |
 | 🗄️ **Disease Database**  | SQLite/PostgreSQL storage     |
 | 🐳 **Docker Support**    | Easy containerized deployment |
@@ -34,22 +35,22 @@ This system helps farmers and agriculturists quickly identify plant diseases by 
 
 ## 🎯 Key Features
 
-| Feature                | Status   | Description                             |
-|------------------------|----------|-----------------------------------------|
-| ✅ **Image Upload**     | Working  | Upload leaf images via Streamlit UI     |
-| ✅ **API Backend**      | Working  | FastAPI with REST endpoints             |
-| ✅ **Stub Predictor**   | Working  | Placeholder for your trained model      |
-| ✅ **Rule Engine**      | Working  | Disease-specific remedies               |
-| ✅ **Database**         | Working  | SQLite with seed data                   |
-| ✅ **Docker Compose**   | Working  | Run UI + API together                   |
-| ✅ **Unit Tests**       | Working  | Pytest for API validation               |
-| 🔜 **Trained Model**    | Pending  | Plug in after pre-review                |
+| Feature                | Status   | Description                          |
+|------------------------|----------|--------------------------------------|
+| ✅ **Image Upload**     | Working  | Upload leaf images via Streamlit UI  |
+| ✅ **API Backend**      | Working  | FastAPI with REST endpoints          |
+| ✅ **Stub Predictor**   | Working  | Placeholder for your trained model   |
+| ✅ **Rule Engine**      | Working  | Disease-specific remedies            |
+| ✅ **Database**         | Working  | SQLite with seed data                |
+| ✅ **Docker Compose**   | Working  | Run UI + API together                |
+| ✅ **Unit Tests**       | Working  | Pytest for API validation            |
+| 🔜 **Trained Model**    | Pending  | Plug in after pre-review             |
 
 ---
 
 ## 🧠 System Architecture
 
-```
+```text
 User Uploads Image
         │
         ▼
@@ -91,7 +92,7 @@ Returns: Disease + Remedies + Prevention
 
 ## 📁 Project Structure
 
-```
+```text
 plantdiseasedemo/
 ├── app/
 │   ├── backend/
@@ -122,13 +123,13 @@ plantdiseasedemo/
 
 ## 🚀 Quick Start Guide (Local Setup)
 
-### Prerequisites
+#### Prerequisites
 
 - Python 3.8+
 - pip (Python package manager)
 - (Optional) Docker Desktop
 
-### Step-by-Step Local Installation
+#### Step-by-Step Local Installation
 
 ```bash
 # 1. Clone the repository
@@ -158,29 +159,33 @@ streamlit run app/ui/streamlit_app.py
 # Streamlit UI:    http://localhost:8501
 ```
 
-Using Docker
+**Using Docker**
+
+```bash
 docker compose up --build
 # UI: http://localhost:8501
 # API: http://localhost:8000/docs
+```
 
+---
 
+## 🔧 API Endpoints
 
-### 🔧 API Endpoints
+| Method | Endpoint           | Description                    |
+|--------|--------------------|--------------------------------|
+| POST   | /predict           | Upload image for prediction    |
+| GET    | /disease/{name}    | Get disease details + remedies |
+| GET    | /health            | API health status              |
 
-| Method | Endpoint           | Description                       |
-|--------|--------------------|-----------------------------------|
-| POST   | /predict           | Upload image for prediction       |
-| GET    | /disease/{name}    | Get disease details + remedies    |
-| GET    | /health            | API health status                 |
-
-#### Example API Request
+**Example API Request:**
 
 ```bash
 curl -X POST http://localhost:8000/predict \
   -F "image=@leaf.jpg"
 ```
 
-#### Example Response (Current - Stub)
+**Example Response (Current - Stub):**
+
 ```json
 {
   "disease": "Late Blight",
@@ -194,13 +199,18 @@ curl -X POST http://localhost:8000/predict \
 }
 ```
 
-#### 🧪 Testing
+---
+
+### 🧪 Testing
+
 Run unit tests:
+
 ```bash
 pytest tests/test_api.py -v
 ```
 
 Expected output:
+
 ```
 tests/test_api.py::test_health_check PASSED
 tests/test_api.py::test_predict_endpoint PASSED
@@ -218,16 +228,14 @@ After pre-review, plug in your model:
     - TensorFlow SavedModel directory
     - `.h5` Keras model
     - TensorFlow Lite `.tflite`
-3. Place model in:
-    ```
-    app/backend/model_artifacts/your_model/
-    ```
+3. Place model in:  
+   `app/backend/model_artifacts/your_model/`
 4. Set environment variables:
     - `MODEL_KIND=keras|savedmodel|tflite`
     - `MODEL_PATH=app/backend/model_artifacts/your_model`
-5. Update model.py with your preprocessing logic (expects RGB 224×224)
+5. Update `model.py` with your preprocessing logic (expects RGB 224×224)
 
-Model Requirements:
+**Model Requirements:**
 
 | Parameter         | Value                         |
 |-------------------|------------------------------|
@@ -261,24 +269,22 @@ Model Requirements:
 
 ## 📊 Project Impact
 
-### Agricultural Impact:
+### Agricultural Impact
 
-| Metric               | Target         |
-|----------------------|---------------|
+| Metric               | Target        |
+|----------------------|--------------|
 | Detection Accuracy   | 94%+ (trained)|
-| Time to Diagnosis    | < 5 seconds   |
-| Farmers Reachable    | 10,000+       |
-| Crop Loss Reduction  | 20-30%        |
+| Time to Diagnosis    | < 5 seconds  |
+| Farmers Reachable    | 10,000+      |
+| Crop Loss Reduction  | 20-30%       |
 
 ### UN SDGs Addressed
 
-| SDG        | Goal           | How                         |
-|------------|----------------|-----------------------------|
-| 🎯 SDG 2   | Zero Hunger    | Reducing crop losses        |
-| 🎯 SDG 15  | Life on Land   | Promoting sustainability    |
-| 🎯 SDG 9   | Innovation     | AI for social good          |
-
-
+| SDG        | Goal           | How                      |
+|------------|----------------|--------------------------|
+| 🎯 SDG 2   | Zero Hunger    | Reducing crop losses     |
+| 🎯 SDG 15  | Life on Land   | Promoting sustainability |
+| 🎯 SDG 9   | Innovation     | AI for social good       |
 
 ---
 
@@ -291,62 +297,54 @@ Import `postman_collection.json` to test:
 
 ---
 
-👨‍💻 Author & My Contributions
-Tanisha Sharma (DevTanisha-max)
+## 👨‍💻 Author & My Contributions
 
-GitHub: @DevTanisha-max
+**Tanisha Sharma (@DevTanisha-max)**
 
-What I Built:
-🔧 Backend Engineering
+**What I Built:**
 
-FastAPI REST API with prediction endpoints
+### 🔧 Backend Engineering
+- FastAPI REST API with prediction endpoints
+- SQLite database integration for disease rules
+- Pydantic schemas for request/response validation
+- API error handling and logging
 
-SQLite database integration for disease rules
+### 🎨 Frontend Development
+- Streamlit UI for leaf image upload
+- Real-time prediction display
+- Treatment recommendations UI
+- Responsive interface design
 
-Pydantic schemas for request/response validation
+### 🐳 DevOps & Containerization
+- Dockerfile for API service
+- Dockerfile for UI service
+- Docker Compose for multi-service orchestration
+- Render.com deployment ready
 
-API error handling and logging
+### 📝 Testing & Documentation
+- Pytest unit tests for API validation
+- Postman collection for API testing
+- Comprehensive README documentation
 
-🎨 Frontend Development
+**Skills Demonstrated:**  
+Python, FastAPI, Streamlit, Docker, Postman, Pytest, Git, SQLite, REST APIs, UI Development
 
-Streamlit UI for leaf image upload
+---
 
-Real-time prediction display
+## 🙏 Acknowledgments
 
-Treatment recommendations UI
+- **ML Model:** The CNN model architecture was developed by [@Raaunnakk555](https://github.com/Raaunnakk555)
+- **Dataset:** PlantVillage dataset (for reference)
+- **Frameworks:** FastAPI, Streamlit, TensorFlow/Keras
 
-Responsive interface design
+---
 
-🐳 DevOps & Containerization
+## 📄 License
 
-Dockerfile for API service
-
-Dockerfile for UI service
-
-Docker Compose for multi-service orchestration
-
-Render.com deployment ready
-
-📝 Testing & Documentation
-
-Pytest unit tests for API validation
-
-Postman collection for API testing
-
-Comprehensive README documentation
-
-Skills Demonstrated:
-Python FastAPI Streamlit Docker Postman Pytest Git SQLite REST APIs UI Development
-
-🙏 Acknowledgments
-ML Model: The CNN model architecture was developed by @Raaunnakk555
-
-Dataset: PlantVillage dataset (for reference)
-
-Frameworks: FastAPI, Streamlit, TensorFlow/Keras
-
-📄 License
 MIT License
 
-⭐ Show Your Support
+---
+
+## ⭐ Show Your Support
+
 If this project helps you, please give it a ⭐ on GitHub!
